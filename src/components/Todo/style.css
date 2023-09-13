@@ -41,5 +41,12 @@ input {
 }
 
 .todo:hover {
-	box-shadow: 2px 2px 3px gray;
+	box-shadow: 2px 2px 3px var(--base-gray);
+}
+
+.isComplete {
+	text-decoration: line-through;
+
+	color: var(--base-white);
+	background: var(--base-gray);
 }

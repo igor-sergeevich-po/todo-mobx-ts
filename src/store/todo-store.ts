@@ -1,7 +1,8 @@
-import { makeAutoObservable } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import mockTodos from '../assets/mockTodos';
 
-interface Todo {
+
+export interface ITodo {
 	id: string,
 	name: string,
 	description: string,
@@ -9,14 +10,25 @@ interface Todo {
 }
 
 class TodosStore {
-	todosList: Todo[] = mockTodos;
-	filteredTodosList: Todo[] = [];
+	todosList: ITodo[] = mockTodos;
+	filteredTodosList: ITodo[] = [];
 
 	constructor() {
-		makeAutoObservable(this);
+		makeObservable(this, {
+			todosList: observable,
+			filteredTodosList: observable,
+
+
+			addTodo: action,
+			removeTodo: action,
+			filter: action,
+			changeStatusTodo: action,
+			setFilteredTodosList: action
+
+		});
 	}
 
-	addTodo = (todo: Todo): void => {
+	addTodo = (todo: ITodo): void => {
 		this.todosList.push(todo);
 	};
 
@@ -24,7 +36,7 @@ class TodosStore {
 		this.todosList = this.todosList.filter(todo => todo.id !== id);
 	};
 
-	filter = (isComplete: boolean): Todo[] => {
+	filter = (isComplete: boolean): ITodo[] => {
 		return this.todosList.filter(todo => todo.isComplete === isComplete);
 	};
 
@@ -39,9 +51,9 @@ class TodosStore {
 		});
 	};
 
-	setFilteredTodosList = (list: Todo[]): void => {
+	setFilteredTodosList = (list: ITodo[]): void => {
 		this.filteredTodosList = list;
-	}
+	};
 }
 
 export default new TodosStore();
