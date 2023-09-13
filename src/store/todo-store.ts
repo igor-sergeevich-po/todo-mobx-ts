@@ -1,4 +1,4 @@
-import { action, makeObservable, observable } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 import mockTodos from '../assets/mockTodos';
 
 interface Todo {
@@ -13,16 +13,7 @@ class TodosStore {
 	filteredTodosList: Todo[] = [];
 
 	constructor() {
-		makeObservable(this, {
-			todosList: observable,
-			filteredTodosList: observable,
-			addTodo: action,
-			removeTodo: action,
-			filter: action,
-			changeStatusTodo: action,
-			setFilteredTodosList: action
-
-		});
+		makeAutoObservable(this);
 	}
 
 	addTodo = (todo: Todo): void => {
