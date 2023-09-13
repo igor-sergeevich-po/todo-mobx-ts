@@ -1,0 +1,27 @@
+.remove-btn {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	line-height: 10px;
+	max-width: 50px;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 0px 4px 4px;
+
+	cursor: pointer;
+	transition: .3s;
+
+	&:hover {
+		color: red;
+	}
+
+	&:active {
+		color: red;
+		background: rgba(252, 190, 190, 0.689);
+		border: 1px solid red;
+	}
+}

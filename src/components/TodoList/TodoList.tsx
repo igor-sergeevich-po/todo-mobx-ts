@@ -11,10 +11,10 @@ injectStores({
 
 
 const TodoList = observer(() => {
-	const { todosList, changeStatusTodo } = TodosStore;
+	const { todosList, changeStatusTodo, removeTodo } = TodosStore;
 	return (
 		<div className='todo-list'>
-			{todosList?.map(todo => <Todo key={todo.id} todo={todo} changeStatusTodo={changeStatusTodo} />)}
+			{todosList?.map(todo => <Todo key={todo.id} todo={todo} changeStatusTodo={changeStatusTodo} removeTodo={removeTodo} />)}
 		</div>
 	);
 });
