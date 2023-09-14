@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TodosStore from '../../store/todo-store'
-import { v4 as uuid } from 'uuid'
+import TodosStore from '../../store/todo-store';
+import { v4 as uuid } from 'uuid';
 import './style.css';
 
 const NewTodo = () => {
@@ -19,7 +19,7 @@ const NewTodo = () => {
 			addTodo(todo);
 			setTitleTodo('');
 		} else {
-			alert('слишком короткое название, введите больше 5 символов')
+			alert('слишком короткое название, введите больше 5 символов');
 		}
 	}
 	return (

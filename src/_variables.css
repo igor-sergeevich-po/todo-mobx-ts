@@ -1,10 +1,13 @@
 :root {
 	--base-gray: gray;
 	--base-white: white;
+	--base-black: black;
 	--base-bg-color: #D3DDE1;
 	--todo-bg-color: #56725526;
 	--border: #797979;
 	--add-btn-hover-bg: #E9E9E9;
 	--add-btn-active-bg: #73A18F;
 	--add-btn-active-text: white;
+	--input-bg: #E9E8E8;
+	--active: green;
 }
