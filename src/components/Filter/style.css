@@ -54,5 +54,4 @@
 .filter-btn:active {
 	color: var(--base-white);
 	background: var(--add-btn-active-bg);
-
 }

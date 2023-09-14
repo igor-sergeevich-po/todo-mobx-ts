@@ -12,19 +12,26 @@ export interface ITodo {
 class TodosStore {
 	todosList: ITodo[] = mockTodos;
 	filteredTodosList: ITodo[] = [];
+	flagFilter: boolean = false;
+	isFiltered: 'Complete' | 'UnComplete' | '' = '';
+
 
 	constructor() {
 		makeObservable(this, {
 			todosList: observable,
 			filteredTodosList: observable,
 
+			flagFilter: observable,
+			isFiltered: observable,
 
 			addTodo: action,
 			removeTodo: action,
 			filter: action,
 			changeStatusTodo: action,
-			setFilteredTodosList: action
+			setFilteredTodosList: action,
 
+			setFlagFilter: action,
+			setIsFiltered: action,
 		});
 	}
 
@@ -53,6 +60,14 @@ class TodosStore {
 
 	setFilteredTodosList = (list: ITodo[]): void => {
 		this.filteredTodosList = list;
+	};
+
+	setFlagFilter = (flag: boolean): void => {
+		this.flagFilter = flag;
+	};
+
+	setIsFiltered = (flag: 'Complete' | 'UnComplete' | ''): void => {
+		this.isFiltered = flag;
 	};
 }
 
