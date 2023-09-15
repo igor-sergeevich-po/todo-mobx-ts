@@ -14,11 +14,11 @@ const NewTodo = () => {
 	};
 
 	function addTodoItem() {
-		if (titleTodo.length > 5) {
-
+		if (titleTodo.length > 5 && titleTodo.replace(/\s/g, '')) {
 			addTodo(todo);
 			setTitleTodo('');
 		} else {
+			setTitleTodo('');
 			alert('слишком короткое название, введите больше 5 символов');
 		}
 	}

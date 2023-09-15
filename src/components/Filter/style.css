@@ -55,3 +55,10 @@
 	color: var(--base-white);
 	background: var(--add-btn-active-bg);
 }
+
+
+@media (max-width: 550px) {
+	.filter_conten-buttons {
+		flex-direction: column;
+	}
+}
