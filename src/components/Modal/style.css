@@ -1,0 +1,38 @@
+@import url("../../_variables.css");
+
+.fon_modal {
+	position: absolute;
+
+	z-index: 2;
+
+
+	width: 100%;
+	height: 98vh;
+
+	background: var(--modal-fon);
+	backdrop-filter: blur(1.5px);
+}
+
+.modal {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-width: 250px;
+	min-height: 100px;
+
+	transform: translate(-50%, -50%);
+
+	border-radius: 5px;
+	background: var(--modal-bg);
+	border: 1px solid var(--base-gray);
+	padding: 15px;
+}
+
+.hide {
+	visibility: hidden;
+}

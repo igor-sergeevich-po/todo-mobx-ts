@@ -6,5 +6,8 @@ html {
 }
 
 .App {
+	position: relative;
+	z-index: 5;
+
 	text-align: center;
 }

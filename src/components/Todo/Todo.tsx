@@ -4,7 +4,11 @@ import { ITodo } from './../../store/todo-store';
 import './style.css';
 
 
-const Todo = ({ todo, changeStatusTodo, removeTodo }: { todo: ITodo, changeStatusTodo: { (id: string): void }, removeTodo: { (id: string): void } }) => {
+const Todo = ({ todo, changeStatusTodo, removeTodo }: {
+	todo: ITodo, changeStatusTodo: { (id: string): void }, removeTodo: {
+		(id: string): void
+	}
+}) => {
 	const style = `todo ${todo.isComplete && 'isComplete'}`;
 	return (
 		<div className={style}>

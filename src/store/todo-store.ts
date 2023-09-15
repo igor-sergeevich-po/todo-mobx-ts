@@ -14,10 +14,12 @@ class TodosStore {
 	filteredTodosList: ITodo[] = [];
 	flagFilter: boolean = false;
 	isFiltered: 'Complete' | 'UnComplete' | '' = '';
+	modalMessage: string = 'fdgsdfgg';
 
 
 	constructor() {
 		makeObservable(this, {
+			modalMessage: observable,
 			todosList: observable,
 			filteredTodosList: observable,
 
@@ -32,6 +34,8 @@ class TodosStore {
 
 			setFlagFilter: action,
 			setIsFiltered: action,
+
+			setModalMessage: action,
 		});
 	}
 
@@ -41,7 +45,7 @@ class TodosStore {
 
 	removeTodo = (id: string): void => {
 		this.todosList = this.todosList.filter(todo => todo.id !== id);
-		this.filteredTodosList = this.filteredTodosList.filter(todo => todo.id !== id)
+		this.filteredTodosList = this.filteredTodosList.filter(todo => todo.id !== id);
 	};
 
 	filter = (isComplete: boolean): ITodo[] => {
@@ -70,6 +74,10 @@ class TodosStore {
 
 	setIsFiltered = (flag: 'Complete' | 'UnComplete' | ''): void => {
 		this.isFiltered = flag;
+	};
+
+	setModalMessage = (message: string): void => {
+		this.modalMessage = message;
 	};
 }
 
