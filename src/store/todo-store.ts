@@ -41,10 +41,12 @@ class TodosStore {
 
 	removeTodo = (id: string): void => {
 		this.todosList = this.todosList.filter(todo => todo.id !== id);
+		this.filteredTodosList = this.filteredTodosList.filter(todo => todo.id !== id)
 	};
 
 	filter = (isComplete: boolean): ITodo[] => {
 		return this.todosList.filter(todo => todo.isComplete === isComplete);
+
 	};
 
 	changeStatusTodo = (id: string): void => {

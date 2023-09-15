@@ -16,6 +16,8 @@ const TodoList = observer(() => {
 
 	return (
 		<div className='todo-list'>
+			{!todosList.length && 'Добавьте новые задачи' || flagFilter && !filteredTodosList.length && 'нет выполненных задач'}
+
 			{!flagFilter && todosList?.map(todo => <Todo
 				key={todo.id} todo={todo} changeStatusTodo={changeStatusTodo}
 				removeTodo={removeTodo} />)}
