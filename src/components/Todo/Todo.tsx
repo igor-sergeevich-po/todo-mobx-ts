@@ -1,8 +1,9 @@
 
 import RemoveBtn from '../RemoveButton/RemoveButton';
 import { ITodo } from './../../store/todo-store';
-import './style.css';
 import EditButton from '../EditButton/EditButton';
+import { useTranslation } from 'react-i18next';
+import './style.css';
 
 
 const Todo = ({ todo, changeStatusTodo, removeTodo }: {
@@ -10,6 +11,8 @@ const Todo = ({ todo, changeStatusTodo, removeTodo }: {
 		(id: string): void
 	}
 }) => {
+	const { t } = useTranslation();
+
 	const style = `todo ${todo.isComplete && 'isComplete'}`;
 	return (
 		<div className={style}>
@@ -18,7 +21,7 @@ const Todo = ({ todo, changeStatusTodo, removeTodo }: {
 			<h5>{todo.name}</h5>
 			<span>{todo.description}</span>
 			<label>
-				выполнено?
+				{t('completed')}
 				<input onChange={(evt) => changeStatusTodo(evt.target.id)} id={todo.id} type='checkbox' checked={todo.isComplete} />
 			</label>
 		</div>

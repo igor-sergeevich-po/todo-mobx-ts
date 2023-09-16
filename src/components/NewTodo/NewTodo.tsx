@@ -3,12 +3,14 @@ import TodosStore from '../../store/todo-store';
 import { v4 as uuid } from 'uuid';
 import { observer } from 'mobx-react-lite';
 import { removeClassButton } from '../../helpFun/removeClassButton';
+import { useTranslation } from 'react-i18next';
 import './style.css';
 
 
 const NewTodo = observer(() => {
 	const [titleTodo, setTitleTodo] = useState('');
 	const { addTodo, setModalMessage, setFlagFilter } = TodosStore;
+	const { t } = useTranslation();
 
 	// document.body.appendChild(form)
 	const todo = {
@@ -30,7 +32,9 @@ const NewTodo = observer(() => {
 			removeClassButton();
 
 		} else {
-			setModalMessage('слишком короткое название, введите больше 5 символов');
+			const modalMsg = t('shortName');
+
+			setModalMessage(modalMsg);
 			setTitleTodo('');
 
 			modal?.classList.remove('hide');
@@ -39,8 +43,8 @@ const NewTodo = observer(() => {
 	return (
 		<form action='#' className='newTodo'>
 			<input onChange={(evt) => setTitleTodo(evt.target.value)}
-				type="text" placeholder='текст новой задачи' value={titleTodo} />
-			<input onClick={() => addTodoItem()} type='button' value='Добавить' />
+				type="text" placeholder={t('placeholderNewTodo')} value={titleTodo} />
+			<input onClick={() => addTodoItem()} type='button' value={t('add')} />
 		</form>
 	);
 });

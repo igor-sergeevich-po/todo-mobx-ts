@@ -2,9 +2,12 @@ import { useState } from 'react';
 import TodosStore from '../../store/todo-store';
 import { observer } from 'mobx-react-lite';
 import { removeClassButton } from '../../helpFun/removeClassButton';
+import { useTranslation } from 'react-i18next';
 import './style.css';
 
 const Edit = observer(() => {
+	const { t } = useTranslation();
+
 	const { editedTodo, saveEditedTodo, setEditedTodo, setModalMessage } = TodosStore;
 	const todo = JSON.parse(JSON.stringify(editedTodo))[0];
 
@@ -37,18 +40,18 @@ const Edit = observer(() => {
 
 	return (
 		<form action='#' className='edit'>
-			<h5>режим редактирования:</h5>
+			<h5>{t('edit')}</h5>
 			<label>
-				<p>задача:</p>
+				<p>{t('task')}</p>
 				<input type="text" onChange={
 					(evt) => setName(evt.target.value)} value={name} />
 			</label>
 			<label>
-				<p>описание:</p>
+				<p>{t('description')}</p>
 				<input type="text" onChange={
 					(evt) => setDescription(evt.target.value)} value={description} />
 			</label>
-			<input className='update' onClick={() => handleSaveTodo()} type='button' value='Обновить' />
+			<input className='update' onClick={() => handleSaveTodo()} type='button' value={t('update')} />
 		</form>
 	);
 });

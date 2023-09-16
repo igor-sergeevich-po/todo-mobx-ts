@@ -1,9 +1,17 @@
 
 import TodosStore from '../../store/todo-store';
 import { observer } from 'mobx-react-lite';
+import { useTranslation } from 'react-i18next';
 import './style.css';
 
+const lngs = {
+	ru: { nativeName: 'Русский' },
+	en: { nativeName: 'English' }
+};
+
 const Filter = observer(() => {
+	const { t, i18n } = useTranslation();
+
 	const { filter, setFilteredTodosList, setFlagFilter,
 		setIsFiltered, flagFilter, isFiltered } = TodosStore;
 
@@ -38,15 +46,19 @@ const Filter = observer(() => {
 	}
 	return (
 		<div className='filter'>
+			<span>{t('language')}</span>
+			{Object.keys(lngs).map(lng => (
+				<button className='filter-btn' type='submit' key={lng} onClick={() => i18n.changeLanguage(lng)} disabled={i18n.resolvedLanguage === lng}>{lng}</button>
+			))}
 			<div className='filter_content'>
-				<span>Фильтры:</span>
+				<span>{t('filters')}</span>
 				<div className='filter_conten-buttons'>
 					<button className={styleBtnCompleted} id='completed'
 						onClick={() => handleFilterComplete()}
-					> completed</button>
+					>{t('completed')}</button>
 					<button className={styleBtnUnCompleted} id='unCompleted'
 						onClick={() => handleFilterUnComplete()}
-					> unCompleted</button>
+					>{t('unCompleted')}</button>
 				</div>
 			</div >
 		</div >
