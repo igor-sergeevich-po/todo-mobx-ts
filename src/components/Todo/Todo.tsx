@@ -2,6 +2,7 @@
 import RemoveBtn from '../RemoveButton/RemoveButton';
 import { ITodo } from './../../store/todo-store';
 import './style.css';
+import EditButton from '../EditButton/EditButton';
 
 
 const Todo = ({ todo, changeStatusTodo, removeTodo }: {
@@ -13,6 +14,7 @@ const Todo = ({ todo, changeStatusTodo, removeTodo }: {
 	return (
 		<div className={style}>
 			<RemoveBtn removeTodo={removeTodo} id={todo.id} />
+			<EditButton id={todo.id} />
 			<h5>{todo.name}</h5>
 			<span>{todo.description}</span>
 			<label>

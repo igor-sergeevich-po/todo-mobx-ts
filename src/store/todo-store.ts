@@ -1,5 +1,6 @@
 import { action, makeObservable, observable } from 'mobx';
 import mockTodos from '../assets/mockTodos';
+// import { ITodo } from './todo-store';
 
 
 export interface ITodo {
@@ -14,7 +15,8 @@ class TodosStore {
 	filteredTodosList: ITodo[] = [];
 	flagFilter: boolean = false;
 	isFiltered: 'Complete' | 'UnComplete' | '' = '';
-	modalMessage: string = 'fdgsdfgg';
+	modalMessage: string = '';
+	editedTodo: ITodo[] = [];
 
 
 	constructor() {
@@ -22,6 +24,7 @@ class TodosStore {
 			modalMessage: observable,
 			todosList: observable,
 			filteredTodosList: observable,
+			editedTodo: observable,
 
 			flagFilter: observable,
 			isFiltered: observable,
@@ -36,6 +39,9 @@ class TodosStore {
 			setIsFiltered: action,
 
 			setModalMessage: action,
+
+			setEditedTodo: action,
+			saveEditedTodo: action
 		});
 	}
 
@@ -78,6 +84,28 @@ class TodosStore {
 
 	setModalMessage = (message: string): void => {
 		this.modalMessage = message;
+	};
+
+	setEditedTodo = (id: string): void => {
+		this.editedTodo = this.todosList.filter(todo => todo.id === id);
+	};
+
+	saveEditedTodo = (updTodo: ITodo): void => {
+		this.todosList = this.todosList.map(todo => {
+			if (todo.id === updTodo.id) {
+				return updTodo;
+			} else {
+				return todo;
+			}
+		});
+
+		this.filteredTodosList = this.todosList.map(todo => {
+			if (todo.id === updTodo.id) {
+				return updTodo;
+			} else {
+				return todo;
+			}
+		});
 	};
 }
 

@@ -20,17 +20,19 @@
 
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 	justify-content: center;
 
 	min-width: 250px;
 	min-height: 100px;
+	padding: 15px;
 
 	transform: translate(-50%, -50%);
 
+	border: 1px solid var(--base-gray);
+
 	border-radius: 5px;
 	background: var(--modal-bg);
-	border: 1px solid var(--base-gray);
-	padding: 15px;
 }
 
 .hide {
