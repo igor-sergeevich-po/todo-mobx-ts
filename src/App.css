@@ -1,0 +1,14 @@
+@import url(".//_variables.css");
+@import url(".//normalize.css");
+
+html {
+	background: var(--base-bg-color);
+
+}
+
+.App {
+	position: relative;
+	z-index: 5;
+
+	text-align: center;
+}

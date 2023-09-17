@@ -1,0 +1,64 @@
+@import url("../../_variables.css");
+
+.todo-list {
+	display: flex;
+	flex-wrap: wrap;
+
+	width: 80vw;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding: 10px;
+
+	border: 1px solid var(--border);
+	border-radius: var(--radius-block);
+	gap: 15px;
+}
+
+@media (width >= 1200px) {
+	.todo-list {
+		width: 1000px;
+
+		font-size: 20px;
+	}
+}
+
+@media (width <= 1200px) {
+	.todo-list {
+		width: 800px;
+
+		font-size: 18px;
+	}
+}
+
+@media (width <= 1000px) {
+	.todo-list {
+		width: 600px;
+
+		font-size: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.todo-list {
+		width: 430px;
+
+		font-size: 14px;
+	}
+}
+
+@media (width <= 480px) {
+	.todo-list {
+		width: 300px;
+
+		font-size: 12px;
+	}
+}
+
+@media (width <= 350px) {
+	.todo-list {
+		width: 250px;
+
+		font-size: 10px;
+	}
+}

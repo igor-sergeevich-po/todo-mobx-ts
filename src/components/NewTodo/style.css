@@ -1,0 +1,87 @@
+@import url("../../_variables.css");
+
+.newTodo {
+	display: flex;
+	flex-direction: column;
+
+	width: 20vw;
+	margin: auto;
+	margin-top: 10px;
+	padding: 10px;
+	gap: 5px;
+
+	border: 1px solid var(--base-gray);
+	border-radius: var(--radius-block);
+}
+
+.newTodo .add {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+input {
+	transition: .3s;
+
+	text-align: center;
+
+	border-radius: 5px;
+}
+
+input::placeholder {
+	text-align: center;
+
+	color: var(--base-gray);
+}
+
+.newTodo input:last-child:hover {
+	cursor: pointer;
+
+	background: var(--input-bg);
+}
+
+.newTodo input:last-child:active {
+	cursor: pointer;
+
+	color: var(--add-btn-active-text);
+	background: var(--add-btn-active-bg);
+}
+
+@media (width >= 1200px) {
+	.newTodo {
+		width: 400px;
+
+		font-size: 20px;
+	}
+}
+
+@media (width <= 1200px) {
+	.newTodo {
+		width: 400px;
+
+		font-size: 18px;
+	}
+}
+
+@media (width <= 1000px) {
+	.newTodo {
+		width: 300px;
+
+		font-size: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.newTodo {
+		width: 250px;
+
+		font-size: 14px;
+	}
+}
+
+@media (width <= 480px) {
+	.newTodo {
+		width: 220px;
+
+		font-size: 12px;
+	}
+}

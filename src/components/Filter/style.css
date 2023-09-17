@@ -1,0 +1,115 @@
+@import url("../../_variables.css");
+
+.filter {
+	display: flex;
+	justify-content: center;
+
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+
+	border: 1px solid var(--base-gray);
+	border-radius: var(--radius-block);
+
+	gap: 10px;
+}
+
+.filter_content {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter__content-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.margin__top10 {
+	margin-top: 10px;
+}
+
+.active {
+	background: var(--active);
+}
+
+
+.filter-btn {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+
+	padding: 0 4px 4px;
+
+	cursor: pointer;
+	transition: .3s;
+
+	border: 1px solid var(--border);
+	border-radius: var(--radius-btn);
+}
+
+.filter-btn:hover {
+	background: var(--input-bg);
+}
+
+.filter-btn:active {
+	color: var(--base-white);
+	background: var(--add-btn-active-bg);
+}
+
+
+/* @media (width <=550px) {
+	.filter_conten-buttons {
+		flex-direction: column;
+	}
+} */
+
+@media (width >= 1200px) {
+	.filter {
+		width: 1000px;
+
+		font-size: 20px;
+	}
+}
+
+@media (width <= 1200px) {
+	.filter {
+		width: 800px;
+
+		font-size: 18px;
+	}
+}
+
+@media (width <= 1000px) {
+	.filter {
+		width: 600px;
+
+		font-size: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.filter {
+		width: 430px;
+
+		font-size: 14px;
+	}
+}
+
+@media (width <= 480px) {
+	.filter {
+		width: 300px;
+
+		font-size: 12px;
+	}
+}
+
+@media (width <= 350px) {
+	.filter {
+		width: 250px;
+
+		font-size: 10px;
+	}
+}
