@@ -46,13 +46,16 @@ const Filter = observer(() => {
 	}
 	return (
 		<div className='filter'>
-			<span>{t('language')}</span>
-			{Object.keys(lngs).map(lng => (
-				<button className='filter-btn' type='submit' key={lng} onClick={() => i18n.changeLanguage(lng)} disabled={i18n.resolvedLanguage === lng}>{lng}</button>
-			))}
+
 			<div className='filter_content'>
-				<span>{t('filters')}</span>
-				<div className='filter_conten-buttons'>
+				<div className="filter__content-buttons">
+					<span>{t('language')}</span>
+					{Object.keys(lngs).map(lng => (
+						<button className='filter-btn' type='submit' key={lng} onClick={() => i18n.changeLanguage(lng)} disabled={i18n.resolvedLanguage === lng}>{lng}</button>
+					))}
+				</div>
+				<div className='filter__content-buttons margin__top10'>
+					<span>{t('filters')}</span>
 					<button className={styleBtnCompleted} id='completed'
 						onClick={() => handleFilterComplete()}
 					>{t('completed')}</button>
