@@ -15,7 +15,7 @@
 	transition: .3s;
 
 	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: var(--radius-btn);
 
 	line-height: 10px;
 

@@ -16,7 +16,7 @@
 
 	transition: .2s;
 
-	border-radius: 5px;
+	border-radius: var(--radius-block);
 
 	background: var(--todo-bg-color);
 }

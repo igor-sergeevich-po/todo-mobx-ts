@@ -3,13 +3,14 @@
 .newTodo {
 	display: flex;
 	flex-direction: column;
-
 	width: 20vw;
-	height: 70px;
 	margin: auto;
 	margin-top: 10px;
 	padding: 10px;
 	gap: 5px;
+
+	border: 1px solid var(--base-gray);
+	border-radius: var(--radius-block);
 }
 
 .newTodo:last-child {
