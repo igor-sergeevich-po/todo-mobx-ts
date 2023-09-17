@@ -9,23 +9,27 @@ import './style.css';
 
 const NewTodo = observer(() => {
 	const [titleTodo, setTitleTodo] = useState('');
+	const [descriptionTodo, setDescriptionTodo] = useState('');
+
 	const { addTodo, setModalMessage, setFlagFilter } = TodosStore;
 	const { t } = useTranslation();
 
-	// document.body.appendChild(form)
 	const todo = {
 		id: uuid(),
 		name: titleTodo,
-		description: 'описание задачи',
+		description: descriptionTodo,
 		isComplete: false
 	};
 
 	function addTodoItem() {
 		const modal = document.getElementById('modal');
 
-		if (titleTodo.length > 5 && titleTodo.replace(/\s/g, '')) {
+		if (titleTodo.length > 5 && titleTodo.replace(/\s/g, '') && descriptionTodo.replace(/\s/g, '')) {
+			// добавляю туду в стейт
 			addTodo(todo);
+			// очищаю поля ввода от ненужного
 			setTitleTodo('');
+			setDescriptionTodo('');
 
 			// удаляю класс active с кнопок при добавлении новой записи
 			setFlagFilter(false);
@@ -33,10 +37,12 @@ const NewTodo = observer(() => {
 
 		} else {
 			const modalMsg = t('shortName');
-
+			// устанавливаю сообщение с ошибкой в модалку
 			setModalMessage(modalMsg);
-			setTitleTodo('');
 
+			// очищаю поле с именем новой туду
+			setTitleTodo('');
+			// показываю пользователю модалку с сообщением
 			modal?.classList.remove('hide');
 		}
 	}
@@ -44,6 +50,7 @@ const NewTodo = observer(() => {
 		<form action='#' className='newTodo'>
 			<input onChange={(evt) => setTitleTodo(evt.target.value)}
 				type="text" placeholder={t('placeholderNewTodo')} value={titleTodo} />
+			<input onChange={(evt) => setDescriptionTodo(evt.target.value)} type="text" placeholder={t('placeholderNewTodoDescription')} value={descriptionTodo} />
 			<input onClick={() => addTodoItem()} type='button' value={t('add')} />
 		</form>
 	);

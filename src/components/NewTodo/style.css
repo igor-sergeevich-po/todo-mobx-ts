@@ -3,6 +3,7 @@
 .newTodo {
 	display: flex;
 	flex-direction: column;
+
 	width: 20vw;
 	margin: auto;
 	margin-top: 10px;
@@ -23,6 +24,8 @@ input {
 	transition: .3s;
 
 	border-radius: 5px;
+
+	text-align: center;
 }
 
 input::placeholder {

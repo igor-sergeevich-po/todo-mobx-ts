@@ -17,6 +17,7 @@ i18next
 					language: 'Язык :',
 					add: 'добавить',
 					placeholderNewTodo: 'имя новой задачи',
+					placeholderNewTodoDescription: 'описание',
 
 					update: 'обновить',
 					task: 'задача :',
@@ -37,6 +38,7 @@ i18next
 					language: 'Language: ',
 					add: 'add',
 					placeholderNewTodo: 'name of new task',
+					placeholderNewTodoDescription: 'description',
 
 					update: 'update',
 					edit: 'edit mode :',

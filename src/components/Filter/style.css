@@ -4,8 +4,9 @@
 	display: flex;
 	justify-content: center;
 
-	margin-top: 20px;
 	width: 40vw;
+
+	margin-top: 20px;
 	margin-right: auto;
 	margin-left: auto;
 	padding: 10px;
