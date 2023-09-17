@@ -3,9 +3,11 @@ import TodosStore from '../../store/todo-store';
 import { observer } from 'mobx-react-lite';
 import { removeClassButton } from '../../helpFun/removeClassButton';
 import { useTranslation } from 'react-i18next';
+import { body } from '../Modal/Modal';
 import './style.css';
 
 const Edit = observer(() => {
+	const modal = document.getElementById('modal') as HTMLElement;
 	const { t } = useTranslation();
 
 	const { editedTodo, saveEditedTodo, setEditedTodo, setModalMessage } = TodosStore;
@@ -16,8 +18,8 @@ const Edit = observer(() => {
 
 	function handleSaveTodo() {
 		if (name.length > 4 && description !== '') {
+			body.classList.remove('overflowHide');
 			// скрыть модалку
-			const modal = document.getElementById('modal') as HTMLElement;
 			modal.classList.add('hide');
 			// обновить данные тудушки
 			const updatedTodo = { ...todo, name, description };
@@ -29,7 +31,7 @@ const Edit = observer(() => {
 
 			removeClassButton();
 		} else {
-			const modal = document.getElementById('modal');
+			// const modal = document.getElementById('modal');
 			// alert('указано короткое имя или описание')
 			setModalMessage('указано короткое имя или описание');
 
@@ -47,7 +49,7 @@ const Edit = observer(() => {
 					(evt) => setName(evt.target.value)} value={name} />
 			</label>
 			<label>
-				<p>{t('description')}</p>
+				<p>{t('description')} :</p>
 				<input type="text" onChange={
 					(evt) => setDescription(evt.target.value)} value={description} />
 			</label>

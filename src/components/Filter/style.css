@@ -4,8 +4,6 @@
 	display: flex;
 	justify-content: center;
 
-	width: 40vw;
-
 	margin-top: 20px;
 	margin-right: auto;
 	margin-left: auto;
@@ -62,8 +60,56 @@
 }
 
 
-@media (width <=550px) {
+/* @media (width <=550px) {
 	.filter_conten-buttons {
 		flex-direction: column;
+	}
+} */
+
+@media (width >= 1200px) {
+	.filter {
+		width: 1000px;
+
+		font-size: 20px;
+	}
+}
+
+@media (width <= 1200px) {
+	.filter {
+		width: 800px;
+
+		font-size: 18px;
+	}
+}
+
+@media (width <= 1000px) {
+	.filter {
+		width: 600px;
+
+		font-size: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.filter {
+		width: 430px;
+
+		font-size: 14px;
+	}
+}
+
+@media (width <= 480px) {
+	.filter {
+		width: 300px;
+
+		font-size: 12px;
+	}
+}
+
+@media (width <= 350px) {
+	.filter {
+		width: 250px;
+
+		font-size: 10px;
 	}
 }

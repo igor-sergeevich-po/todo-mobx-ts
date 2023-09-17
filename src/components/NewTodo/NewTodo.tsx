@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { observer } from 'mobx-react-lite';
 import { removeClassButton } from '../../helpFun/removeClassButton';
 import { useTranslation } from 'react-i18next';
+import { body } from '../Modal/Modal';
 import './style.css';
 
 
@@ -24,8 +25,11 @@ const NewTodo = observer(() => {
 	function addTodoItem() {
 		const modal = document.getElementById('modal');
 
+
 		if (titleTodo.length > 5 && titleTodo.replace(/\s/g, '') && descriptionTodo.replace(/\s/g, '')) {
 			// добавляю туду в стейт
+			body.classList.remove('overflowHide');
+
 			addTodo(todo);
 			// очищаю поля ввода от ненужного
 			setTitleTodo('');
@@ -36,6 +40,8 @@ const NewTodo = observer(() => {
 			removeClassButton();
 
 		} else {
+			body.classList.add('overflowHide');
+
 			const modalMsg = t('shortName');
 			// устанавливаю сообщение с ошибкой в модалку
 			setModalMessage(modalMsg);
@@ -51,7 +57,7 @@ const NewTodo = observer(() => {
 			<input onChange={(evt) => setTitleTodo(evt.target.value)}
 				type="text" placeholder={t('placeholderNewTodo')} value={titleTodo} />
 			<input onChange={(evt) => setDescriptionTodo(evt.target.value)} type="text" placeholder={t('placeholderNewTodoDescription')} value={descriptionTodo} />
-			<input onClick={() => addTodoItem()} type='button' value={t('add')} />
+			<input className='add' onClick={() => addTodoItem()} type='button' value={t('add')} />
 		</form>
 	);
 });

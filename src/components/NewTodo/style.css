@@ -14,8 +14,7 @@
 	border-radius: var(--radius-block);
 }
 
-.newTodo:last-child {
-	max-width: 100px;
+.newTodo .add {
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -23,9 +22,9 @@
 input {
 	transition: .3s;
 
-	border-radius: 5px;
-
 	text-align: center;
+
+	border-radius: 5px;
 }
 
 input::placeholder {
@@ -45,4 +44,44 @@ input::placeholder {
 
 	color: var(--add-btn-active-text);
 	background: var(--add-btn-active-bg);
+}
+
+@media (width >= 1200px) {
+	.newTodo {
+		width: 400px;
+
+		font-size: 20px;
+	}
+}
+
+@media (width <= 1200px) {
+	.newTodo {
+		width: 400px;
+
+		font-size: 18px;
+	}
+}
+
+@media (width <= 1000px) {
+	.newTodo {
+		width: 300px;
+
+		font-size: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.newTodo {
+		width: 250px;
+
+		font-size: 14px;
+	}
+}
+
+@media (width <= 480px) {
+	.newTodo {
+		width: 220px;
+
+		font-size: 12px;
+	}
 }

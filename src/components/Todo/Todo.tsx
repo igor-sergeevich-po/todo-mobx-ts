@@ -21,7 +21,7 @@ const Todo = ({ todo, changeStatusTodo, removeTodo }: {
 			<h5>{todo.name}</h5>
 			<span>{todo.description}</span>
 			<label>
-				{t('completed')}
+				{t('completed')}? :
 				<input onChange={(evt) => changeStatusTodo(evt.target.id)} id={todo.id} type='checkbox' checked={todo.isComplete} />
 			</label>
 		</div>

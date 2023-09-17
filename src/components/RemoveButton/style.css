@@ -29,3 +29,9 @@
 		background: rgb(252 190 190 / 68.9%);
 	}
 }
+
+@media (width >= 1200px) {
+	.remove-btn {
+		padding: 0 6px 6px;
+	}
+}

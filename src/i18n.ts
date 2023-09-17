@@ -12,7 +12,7 @@ i18next
 			ru: {
 				translation: {
 					completed: 'выполненные',
-					unCompleted: 'незавершеные',
+					unCompleted: 'актуальные',
 					filters: 'Фильтры :',
 					language: 'Язык :',
 					add: 'добавить',
@@ -21,12 +21,12 @@ i18next
 
 					update: 'обновить',
 					task: 'задача :',
-					description: 'описание :',
+					description: 'описание',
 					edit: 'режим редактирования :',
-					completedTodo: 'выполнено ? :',
-					shortName: 'слишком короткое название, введите больше 5 символов',
+					completedTodo: 'выполнено',
+					shortName: 'Слишком короткое название, введите больше 5 символов',
 					addNewTask: 'Добавьте новые задачи',
-					noCompletedTasks: 'нет оконченых задач',
+					noCompletedTasks: 'Нет оконченных задач',
 
 				}
 			},
@@ -43,11 +43,11 @@ i18next
 					update: 'update',
 					edit: 'edit mode :',
 					task: 'task :',
-					desctiption: 'description :',
-					completedTodo: 'completed ? :',
-					shortName: 'short name or description',
-					addNewTask: 'add new task',
-					noCompletedTasks: 'noCompletedTasks',
+					desctiption: 'description',
+					completedTodo: 'completed',
+					shortName: 'Short name or description',
+					addNewTask: 'Add new task',
+					noCompletedTasks: 'No completed tasks',
 				}
 			}
 		}
